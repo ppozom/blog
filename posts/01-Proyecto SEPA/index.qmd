@@ -1,0 +1,101 @@
+---
+title: "Proyecto SEPA {{< fa book-open >}}"
+author: "PP"
+date: "2023-11-07"
+categories: [tutorial]
+format: 
+    html:
+      embed-resources: true
+editor: visual
+---
+
+```{r}
+#| label: ruta de digitación
+#| echo: false
+#| warning: false
+
+ruta_digitacion <- "S:/OPERACIONES/2023/4_sepa/01_digitacion/02_digitacion/"
+n_estudiantes <- 26994
+
+```
+
+# Contexto {{< bi file-text-fill color=cornflowerblue label="Hoja de respuesta">}}
+
+Instrumento que mide conocimientos y aprendizajes de lenguaje y matemáticas en escolares que cursan desde Kínder a IV Medio. Es una evaluación voluntaria, adquirida de forma privada por contratantes diversos (establecimientos, fundaciones, servicios locales, municipalidades, proyectos de investigación).\
+\
+En el año 2022 se evaluaron \*\*`r format(n_estudiantes, digits = 1)`\*\* estudiantes en la **aplicación de noviembre**. De tal modo, estimando un 8% de digitación, se digitaron `r format(n_estudiantes * 0.08, digits = 1)` registros
+
+# Digitación
+
+## Instrucciones generales
+
+
+### Insumos Digitación:
+
+-   Contenedor [Azul]{style="color:blue;"}: conjunto de sobres con hojas de respuesta (HR) para digitar
+
+-   Contenedor [Verde]{style="color:green;"}: deposito de sobres ya digitados
+
+-   Lector de código de barras
+
+-   BBDD access
+
+-   Nómina de estudiantes
+
+
+### Códigos Digitación
+
+| Clave | Correspondencia        |
+|-------|------------------------|
+| 1     | Alternativa A          |
+| 2     | Alternativa B          |
+| 3     | Alternativa C          |
+| 4     | Alternativa D          |
+| 98    | Nula (doble selección) |
+| 99    | Omitida (sin elección) |
+| 97    | No aplica              |
+
+## Para Validación
+
+Se requiere realizar la digitación de un porcentaje significativo de hojas de respuestas para comprobar la calidad del trabajo realizado por el proveedor de captura.
+
+::: {.callout-tip title="Sugerencia"}
+Se sugiere contar con un 5% de digitación por cada nivel prueba aplicado.
+:::
+
+En la medida que se lleva a cabo el desmecanizado del material, se seleccionan aleatoriamente sobres de cursos cuyos niveles prueba resultan heterogéneos.
+
+::: callout-important
+El objetivo es digitar sobres de formularios distintos, pues el proveedor de datos realiza una configuración distinta de sus escáneres para cada tipo de formulario.\
+Entonces, lo deseable es tener una digitación homogenea de material procedente de distintos niveles prueba para evaluar la calidad del trabajo del proveedor.
+:::
+
+
+
+1.  La digitación idealmente se debe realizar antes que el proveedor de captura realice el primer retiro de material (programado para el 24/11/23).  (De lo contrario, también se tendría que utilizar Access para formato digital).
+
+La digitación se realiza en el siguiente directorio:
+
+::: border
+```         
+`r ruta_digitacion`
+```
+:::
+
+[![Abrir achivo con ctrl + shift.](imagenes/gif_dig.gif){fig-align="center"}](S:/OPERACIONES/2023/2_ece/t2/01_prueba/)
+
+2.  Abrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.
+
+3.  Estos registros deben ser digitados durante el día en el siguiente directorio:
+
+# Datos
+
+Para esto, es necesario de forma previa, cargar en la tabla **t_estudiantes_0** una selección de variables de la base de **datos asignación de salas**. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales son completados en este proceso.
+
+El objetivo es generar un formulario en donde mediante el uso de una lista desplegable, se permita la selección de una determinada sala y, como consecuencia de lo anterior, se consiga filtrar exclusivamente a los estudiantes asociados a dicha sala.
+
+::: {.callout-important title="Importante"}
+La tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.
+
+**t_estudiante_0** contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. **t_estudiante** contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.
+:::

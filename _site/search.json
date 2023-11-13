@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Operaciones MIDE",
+    "section": "",
+    "text": "Proyecto SEPA \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nPP\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nstr_c(“Proyecto ECE”, )\n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2023\n\n\nPP\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html",
+    "href": "posts/Proyecto ECE/index.html",
+    "title": "Proyecto ECE ",
+    "section": "",
+    "text": "Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura. Sus consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera.\nEn términos prácticos, el instrumento propone dos temas para escribir un ensayo. Se espera que los estudiantes escojan uno y que redacten sus planteamiento con formalidad adecuada, basándose en el uso de recursos argumentativos.\n\n\n\n\n\n\nNota\n\n\n\nEn el año 2023 se evaluaron 7164 estudiantes en la primera aplicación de la temporada, mientras que para la segunda aplicación, se espera que participen 3028 estudiantes (Finalmente participaron 2055 estudiantes, un 68% de participación respecto a lo esperado)"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#contexto",
+    "href": "posts/Proyecto ECE/index.html#contexto",
+    "title": "Proyecto ECE",
+    "section": "",
+    "text": "Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura.\n\nSe trata de un instrumento cuyas consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera.\nEn términos prácticos, el instrumento ofrece dos temas para redactar un ensayo en el cual deben utilizar ciertos recursos de argumentación. Los estudiantes escogen sólo un tema y escriben sus planteamientos en el formulario.\n\n\n\n\n\n\nNota\n\n\n\nEn el año 2023 se evaluaron 7164 estudiantes en la primera aplicación de la temporada, mientras que para la segunda aplicación, se espera que participen 3028 estudiantes (Finalmente participaron 2055 estudiantes, un 68% de participación respecto a lo esperado)"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#flujo-de-trabajo",
+    "href": "posts/Proyecto ECE/index.html#flujo-de-trabajo",
+    "title": "Proyecto ECE",
+    "section": "",
+    "text": "Esto queda cargado en una tabla\\_ t_estudiantes_0, que es donde se va cargando de forma sincrónica la información a través de un formulario (formulario_principal).\nest_folio : vacío est_folio_def: vacío (no se usa) est_rut: rut de estudiante est_dv: dígito verificador de estudiante est_rut_comp: rut completo est_nombre_completo: nombre completo del estudiante est_id_sala : identficador de la sala donde se aplica (en la aplicación 23 es igual al nombre de la sala) est_sala : nombre de la sala donde se aplica (en la aplicación 23 no hay id_sala) est_campus: campus al que corresponde la sala de aplicación est_tema: vacio (tema escogido para el ensayo que est_fuente: vacío (nombre de colaborador mide que asigna folio y tema a estudiante) est_fecha: vacío (fecha en que se realiza la asocianombre de colaborador mide que asigna folio y tema a estudiante)\n\n\n\nAl llegar el material fotocopiado, se realiza la distribución de los documentos a cada corrector. Esta asociación de folio documento con sobre de corrector queda regisrtada en el formulario de mecanizado. Gracias a la base de mecanizado, se tienen elementos que permiten realizar validaciones del proceso de digitación.\nEn la medida que posteriormente se va realizando la digitación de los casos, se activan ciertas alertas en base a la información de esta tabla.\nPor ejemplo: el folio x original, debe ser corregido por el corrector y?"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#aplicación",
+    "href": "posts/Proyecto ECE/index.html#aplicación",
+    "title": "Proyecto ECE",
+    "section": "",
+    "text": "El instrumento se rinde en dos oportunidades por año. Se trata de una aplicación simultanea que se lleva a cabo en todos los campus de la universidad durante un día.\nPara organizar la aplicación, el Área de Aplicación de Operaciones, de forma previa a la aplicación, asigna la sala en la que cada estudiante debe rendir el ensayo en la base de asignación de sala. Para esto, utiliza como insumo la nómina de estudiantes que pueden rendir el instrumento, nómina que envía la Universidad.\nDe este modo, antes de la aplicación, ya se conoce en qué sala debe rendir su ensayo cada estudiante, lo cual permite conocer la cantidad de material total que se usará, así como también la cantidad que debe despacharse a cada sala. Sin embargo, el detalle de los folios que utilizará cada estudiante, es algo que se desconoce a priori.\nAl momento de presentarse a rendir el ensayo en su sala, quien aplica el instrumento entrega a cada estudiante un formulario foliado, el cual es registrado en la lista de asistencia. Este es un registro nos permite posteriormente en el proceso de desmecanizado, realizar la asignación de folios de cada estudiante."
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#desmecanizado",
+    "href": "posts/Proyecto ECE/index.html#desmecanizado",
+    "title": "Proyecto ECE",
+    "section": "",
+    "text": "El material aplicado es recibido en MIDE. y debe pasar por dos procesos:\n\n\nEn esta etapa se deben registrar todos los folios utilizados en la aplicación. Para ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante.\n\nActualmente se utiliza una base de datos de access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.\nPara esto, es necesario de forma previa, cargar en la tabla t_estudiantes_0 una selección de variables de la base de datos asignación de salas.\nSólo así será posible configurar un formulario en donde mediante el uso de una lista desplegable, se permita la selección de una determinada sala y, como consecuencia de lo anterior, se consiga filtrar exclusivamente a los estudiantes asociados a dicha sala.\n\n\n\n\n\n\nImportante\n\n\n\nLa tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.\nt_estudiante_0 contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. t_estudiante contiene los estudiantes, las salas y los folios ya asignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.\n\n\n\n\n\nCada prueba sea corregida por dos correctores.\nPara lograr este objetivo, una vez recibidos todos los registros en la base de asignación de folios, los ensayos se envían a imprenta para ser fotocopiados. La idea es entregar una copia de cada ensayo a dos correctores distintos, uno conserva el original, otro conserva la copia.\nUna vez recibido el material de vuelta de imprenta, el material es organizado separandolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\n\nLuego de ello, el material es inventariado en la Base de mecanizado, la cual sirve para conocer el material que debe revisar cada corrector.\nEsta información constituye el marco de referencia para la digitación de los ensayos (al momento de realizar la digitación, se valida que el id del corrector real coincida con el id del corrector esperado)"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#digitación",
+    "href": "posts/Proyecto ECE/index.html#digitación",
+    "title": "Proyecto ECE ",
+    "section": "Digitación",
+    "text": "Digitación\n\nPrimera digitación\nA cada digitador se le entregará un conjunto de registros corregidos durante el día.\n\nEstos registros serán entregados en un contenedor\nAl interior del contenedor, serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\nEstos registros deben ser digitados durante el día en el siguiente directorio:\nr ruta_digitacion\n\nEsto queda cargado en una tabla\\_ t_estudiantes_0, que es donde se va cargando de forma sincrónica la información a través de un formulario (formulario_principal).\nest_folio : vacío est_folio_def: vacío (no se usa) est_rut: rut de estudiante est_dv: dígito verificador de estudiante est_rut_comp: rut completo est_nombre_completo: nombre completo del estudiante est_id_sala : identficador de la sala donde se aplica (en la aplicación 23 es igual al nombre de la sala) est_sala : nombre de la sala donde se aplica (en la aplicación 23 no hay id_sala) est_campus: campus al que corresponde la sala de aplicación est_tema: vacio (tema escogido para el ensayo que est_fuente: vacío (nombre de colaborador mide que asigna folio y tema a estudiante) est_fecha: vacío (fecha en que se realiza la asocianombre de colaborador mide que asigna folio y tema a estudiante)"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#bbdd-asignación-folios",
+    "href": "posts/Proyecto ECE/index.html#bbdd-asignación-folios",
+    "title": "Proyecto ECE ",
+    "section": "BBDD Asignación folios",
+    "text": "BBDD Asignación folios\nEn esta etapa se deben asociar todos los folios utilizados en la aplicación con slos estudiantes.\nPara ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante. \nActualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.\n\n\n\n\n\n\nFlujo de trabajo\n\n\n\n\nSe filtra access según el nombre de la sala (disponible en el sobre)\nSe pistolea el folio utilizado por el estudiante (En caso que el estudiante se encuentre ausente, se reporta la letra “A” de ausente)\nSe escribe el tema escogido por el estudiante: se admiten valores 1 y 2. En caso que un estudiante no registró tema, debe asignarse el valor 1\nEn caso que no se haya marcado un tema, debe deducirse teniendo a la vista que:\n\n1 regulación deportistas trans\n2 regulación de himno nacional\n\nSe cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio\n\n\n\n\n\n\n\n#| label: flujograma\n\nflowchart LR\n  A[Filtrar sala] --&gt; B(selecciona estudiante)\n  B --&gt; c[Registra folio]\n  B --&gt; d[Registra tema]"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#bbdd-mecanizado",
+    "href": "posts/Proyecto ECE/index.html#bbdd-mecanizado",
+    "title": "Proyecto ECE ",
+    "section": "BBDD Mecanizado",
+    "text": "BBDD Mecanizado\nCada prueba sea corregida por dos correctores.\nPara lograr este objetivo, una vez recibidos todos los registros en la base de asignación de folios, los ensayos se envían a imprenta para ser fotocopiados. La idea es entregar una copia de cada ensayo a dos correctores distintos, uno conserva el original, otro conserva la copia.\nUna vez recibido el material de vuelta de imprenta, el material es organizado separandolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\n\nLuego de ello, el material es inventariado en la Base de mecanizado, la cual sirve para conocer el material que debe revisar cada corrector.\nEsta información constituye el marco de referencia para la digitación de los ensayos (al momento de realizar la digitación, se valida que el id del corrector real coincida con el id del corrector esperado)"
+  },
+  {
+    "objectID": "posts/Proyecto ECE/index.html#primera-digitación",
+    "href": "posts/Proyecto ECE/index.html#primera-digitación",
+    "title": "Proyecto ECE ",
+    "section": "Primera digitación",
+    "text": "Primera digitación\nA cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\nAl interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\n\nLa digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:\n\n\nS:/OPERACIONES/2023/2_ece/t2/01_prueba/\n\n\n\n\nAbrir achivo con ctrl + shift.\n\n\n\nAbrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.\nEstos registros deben ser digitados durante el día en el siguiente directorio:"
+  },
+  {
+    "objectID": "posts/Proyecto SEPA/index.html",
+    "href": "posts/Proyecto SEPA/index.html",
+    "title": "Proyecto SEPA ",
+    "section": "",
+    "text": "Instrumento que mide conocimientos y aprendizajes de lenguaje y matemáticas en escolares que cursan desde Kínder a IV Medio. Es una evaluación voluntaria, adquirida de forma privada por contratantes diversos (establecimientos, fundaciones, servicios locales, municipalidades, proyectos de investigación).\n\nEn el año 2022 se evaluaron **2.6994^{4}** estudiantes en la aplicación de noviembre. De tal modo, se digitaron 2160 registros"
+  },
+  {
+    "objectID": "posts/Proyecto SEPA/index.html#bbdd-asignación-folios",
+    "href": "posts/Proyecto SEPA/index.html#bbdd-asignación-folios",
+    "title": "Proyecto ECE ",
+    "section": "BBDD Asignación folios",
+    "text": "BBDD Asignación folios\nEn esta etapa se deben asociar todos los folios utilizados en la aplicación con slos estudiantes.\nPara ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante. \nActualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.\n\n\n\n\n\n\nFlujo de trabajo\n\n\n\n\nSe filtra access según el nombre de la sala (disponible en el sobre)\nSe pistolea el folio utilizado por el estudiante (En caso que el estudiante se encuentre ausente, se reporta la letra “A” de ausente)\nSe escribe el tema escogido por el estudiante: se admiten valores 1 y 2. En caso que un estudiante no registró tema, debe asignarse el valor 1\nEn caso que no se haya marcado un tema, debe deducirse teniendo a la vista que:\n\n1 regulación deportistas trans\n2 regulación de himno nacional\n\nSe cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio\n\n\n\n\n\n\n\n#| label: flujograma\n\nflowchart LR\n  A[Filtrar sala] --&gt; B(selecciona estudiante)\n  B --&gt; c[Registra folio]\n  B --&gt; d[Registra tema]"
+  },
+  {
+    "objectID": "posts/Proyecto SEPA/index.html#bbdd-mecanizado",
+    "href": "posts/Proyecto SEPA/index.html#bbdd-mecanizado",
+    "title": "Proyecto ECE ",
+    "section": "BBDD Mecanizado",
+    "text": "BBDD Mecanizado\nCada prueba sea corregida por dos correctores.\nPara lograr este objetivo, una vez recibidos todos los registros en la base de asignación de folios, los ensayos se envían a imprenta para ser fotocopiados. La idea es entregar una copia de cada ensayo a dos correctores distintos, uno conserva el original, otro conserva la copia.\nUna vez recibido el material de vuelta de imprenta, el material es organizado separandolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\n\nLuego de ello, el material es inventariado en la Base de mecanizado, la cual sirve para conocer el material que debe revisar cada corrector.\nEsta información constituye el marco de referencia para la digitación de los ensayos (al momento de realizar la digitación, se valida que el id del corrector real coincida con el id del corrector esperado)"
+  },
+  {
+    "objectID": "posts/Proyecto SEPA/index.html#primera-digitación",
+    "href": "posts/Proyecto SEPA/index.html#primera-digitación",
+    "title": "Proyecto ECE ",
+    "section": "Primera digitación",
+    "text": "Primera digitación\nA cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\nAl interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\n\nLa digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:\n\n\nS:/OPERACIONES/2023/2_ece/t2/01_prueba/\n\n\n\n\nAbrir achivo con ctrl + shift.\n\n\n\nAbrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.\nEstos registros deben ser digitados durante el día en el siguiente directorio:"
+  },
+  {
+    "objectID": "posts/Proyecto SEPA/index.html#para-validación",
+    "href": "posts/Proyecto SEPA/index.html#para-validación",
+    "title": "Proyecto SEPA ",
+    "section": "Para Validación",
+    "text": "Para Validación\nSe requiere realizar la digitación de un porcentaje significativo de hojas de respuestas para comprobar la calidad del trabajo realizado por el proveedor de captura.\nEn la medida que se lleva a cabo el desmecanizado del material, se seleccionan aleatoriamente sobres de cursos cuyos niveles prueba resultan heterogeneos.\n\n\n\n\n\n\nImportant\n\n\n\nEl objetivo es lograr digitar sobres cuyos formularios son distintos, pues el proveedor de datos realiza una configuración distinta para cada tipo de formulario.\n\n\nEl objetivo es poder digitar sobres cuyos formularios son distintos, pues cada formulario tiene su propia configuración en la para llevar a cabo la digitación para evaluación de la calidad del proveedor.\nInsumos:\n\nContenedor Azul: conjunto de sobres con hojas de respuesta (HR) para digitar\nContenedor Verde: deposito de sobres ya digitados\nLector de código de barras\nBBDD access\nNómina de estudiantes\nA cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\nAl interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\n\n\n\n\n\n\n\nSugerencia\n\n\n\nSe sugiere contar con un 5% de digitación por cada nivel prueba aplicado.\n\n\n\nLa digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:\n\n\nS:/OPERACIONES/2023/4_sepa/01_digitacion/02_digitacion/\n\n\n\n\nAbrir achivo con ctrl + shift.\n\n\n\nAbrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.\nEstos registros deben ser digitados durante el día en el siguiente directorio:"
+  },
+  {
+    "objectID": "posts/02-Proyecto ECE/index.html",
+    "href": "posts/02-Proyecto ECE/index.html",
+    "title": "str_c(“Proyecto ECE”, )",
+    "section": "",
+    "text": "Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura. Sus consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera.\nEn términos prácticos, el instrumento propone dos temas para escribir un ensayo. Se espera que los estudiantes escojan uno y que redacten sus planteamiento con formalidad adecuada, basándose en el uso de recursos argumentativos.\n\n\n\n\n\n\nNota\n\n\n\nEn el año 2023 se evaluaron 7164 estudiantes en la primera aplicación de la temporada, mientras que para la segunda aplicación, se espera que participen 3028 estudiantes (Finalmente participaron 2055 estudiantes, un 68% de participación respecto a lo esperado)"
+  },
+  {
+    "objectID": "posts/02-Proyecto ECE/index.html#bbdd-asignación-folios",
+    "href": "posts/02-Proyecto ECE/index.html#bbdd-asignación-folios",
+    "title": "str_c(“Proyecto ECE”, )",
+    "section": "BBDD Asignación folios",
+    "text": "BBDD Asignación folios\nEn esta etapa se deben asociar todos los folios utilizados en la aplicación con slos estudiantes.\nPara ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante. \nActualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.\n\n\n\n\n\n\nFlujo de trabajo\n\n\n\n\nSe filtra access según el nombre de la sala (disponible en el sobre)\nSe pistolea el folio utilizado por el estudiante (En caso que el estudiante se encuentre ausente, se reporta la letra “A” de ausente)\nSe escribe el tema escogido por el estudiante: se admiten valores 1 y 2. En caso que un estudiante no registró tema, debe asignarse el valor 1\nEn caso que no se haya marcado un tema, debe deducirse teniendo a la vista que:\n\n1 regulación deportistas trans\n2 regulación de himno nacional\n\nSe cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio\n\n\n\n\n\n\n\n#| label: flujograma\n\nflowchart LR\n  A[Filtrar sala] --&gt; B(selecciona estudiante)\n  B --&gt; c[Registra folio]\n  B --&gt; d[Registra tema]"
+  },
+  {
+    "objectID": "posts/02-Proyecto ECE/index.html#bbdd-mecanizado",
+    "href": "posts/02-Proyecto ECE/index.html#bbdd-mecanizado",
+    "title": "str_c(“Proyecto ECE”, )",
+    "section": "BBDD Mecanizado",
+    "text": "BBDD Mecanizado\nCada prueba sea corregida por dos correctores.\nPara lograr este objetivo, una vez recibidos todos los registros en la base de asignación de folios, los ensayos se envían a imprenta para ser fotocopiados. La idea es entregar una copia de cada ensayo a dos correctores distintos, uno conserva el original, otro conserva la copia.\nUna vez recibido el material de vuelta de imprenta, el material es organizado separandolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\n\nLuego de ello, el material es inventariado en la Base de mecanizado, la cual sirve para conocer el material que debe revisar cada corrector.\nEsta información constituye el marco de referencia para la digitación de los ensayos (al momento de realizar la digitación, se valida que el id del corrector real coincida con el id del corrector esperado)"
+  },
+  {
+    "objectID": "posts/02-Proyecto ECE/index.html#primera-digitación",
+    "href": "posts/02-Proyecto ECE/index.html#primera-digitación",
+    "title": "str_c(“Proyecto ECE”, )",
+    "section": "Primera digitación",
+    "text": "Primera digitación\nA cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\nAl interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\n\nLa digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:\n\n\nS:/OPERACIONES/2023/2_ece/t2/01_prueba/\n\n\n\n\nAbrir achivo con ctrl + shift.\n\n\n\nAbrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.\nEstos registros deben ser digitados durante el día en el siguiente directorio:"
+  },
+  {
+    "objectID": "posts/01-Proyecto SEPA/index.html",
+    "href": "posts/01-Proyecto SEPA/index.html",
+    "title": "Proyecto SEPA ",
+    "section": "",
+    "text": "Instrumento que mide conocimientos y aprendizajes de lenguaje y matemáticas en escolares que cursan desde Kínder a IV Medio. Es una evaluación voluntaria, adquirida de forma privada por contratantes diversos (establecimientos, fundaciones, servicios locales, municipalidades, proyectos de investigación).\n\nEn el año 2022 se evaluaron **26994** estudiantes en la aplicación de noviembre. De tal modo, estimando un 8% de digitación, se digitaron 2160 registros"
+  },
+  {
+    "objectID": "posts/01-Proyecto SEPA/index.html#para-validación",
+    "href": "posts/01-Proyecto SEPA/index.html#para-validación",
+    "title": "Proyecto SEPA ",
+    "section": "Para Validación",
+    "text": "Para Validación\nSe requiere realizar la digitación de un porcentaje significativo de hojas de respuestas para comprobar la calidad del trabajo realizado por el proveedor de captura.\nEn la medida que se lleva a cabo el desmecanizado del material, se seleccionan aleatoriamente sobres de cursos cuyos niveles prueba resultan heterogeneos.\n\n\n\n\n\n\nImportant\n\n\n\nEl objetivo es digitar sobres de formularios distintos, pues el proveedor de datos realiza una configuración distinta de sus escáneres para cada tipo de formulario.\nEntonces, lo deseable es tener una digitación homogenea de material procedente de distintos niveles prueba para evaluar la calidad del trabajo del proveedor.\n\n\nEl objetivo es digitar sobres de distintos formularios, pues cada formulario tiene su propia configuración en la para llevar a cabo la digitación para evaluación de la calidad del proveedor.\nInsumos:\n\nContenedor Azul: conjunto de sobres con hojas de respuesta (HR) para digitar\nContenedor Verde: deposito de sobres ya digitados\nLector de código de barras\nBBDD access\nNómina de estudiantes\nA cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\nAl interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)\n\n\n\n\n\n\n\nSugerencia\n\n\n\nSe sugiere contar con un 5% de digitación por cada nivel prueba aplicado.\n\n\n\nLa digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:\n\n\nS:/OPERACIONES/2023/4_sepa/01_digitacion/02_digitacion/\n\n\n\n\nAbrir achivo con ctrl + shift.\n\n\n\nAbrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.\nEstos registros deben ser digitados durante el día en el siguiente directorio:"
+  }
+]

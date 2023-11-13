@@ -1,0 +1,42 @@
+project:
+  type: website
+
+toc: TRUE
+toc-title: Contenidos
+toc-location: left
+toc-depth: 5
+toc_float: true
+number-sections: false
+citations-hover: false  
+
+website:
+  title: "Datos Operaciones"
+  page-footer:
+    left: "Blog hecho con 💜 y [Quarto](https://quarto.org/), por Pablo Pozo."
+    right:
+      - icon: envelope
+        href: mailto:pablopozom@gmail.com
+  navbar:
+    logo: "imagen/mide_01.png"
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/ppozom
+      - icon: twitter
+        href: https://twitter.com
+format:
+  html:
+    smooth-scroll: true
+    theme:
+        light: lumen
+        dark: journal
+    css: styles.css
+    link-external-newwindow: true
+
+editor: visual
+
+
+execute:
+  freeze: true  # se vuelve a renderizar en caso que se encuentre alguna diferencia en el documento
+
+
