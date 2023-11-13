@@ -30,7 +30,7 @@ ruta_digitacion <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
 
 # Contexto
 
-18:16
+actualizacion 18:16
 
 Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura. **Sus consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera**.
 

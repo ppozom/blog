@@ -29,7 +29,6 @@ En el año 2022 se evaluaron \*\*`r format(n_estudiantes, digits = 1)`\*\* estud
 
 ## Instrucciones generales
 
-
 ### Insumos Digitación:
 
 -   Contenedor [Azul]{style="color:blue;"}: conjunto de sobres con hojas de respuesta (HR) para digitar
@@ -41,7 +40,6 @@ En el año 2022 se evaluaron \*\*`r format(n_estudiantes, digits = 1)`\*\* estud
 -   BBDD access
 
 -   Nómina de estudiantes
-
 
 ### Códigos Digitación
 
@@ -69,8 +67,6 @@ En la medida que se lleva a cabo el desmecanizado del material, se seleccionan a
 El objetivo es digitar sobres de formularios distintos, pues el proveedor de datos realiza una configuración distinta de sus escáneres para cada tipo de formulario.\
 Entonces, lo deseable es tener una digitación homogenea de material procedente de distintos niveles prueba para evaluar la calidad del trabajo del proveedor.
 :::
-
-
 
 1.  La digitación idealmente se debe realizar antes que el proveedor de captura realice el primer retiro de material (programado para el 24/11/23).  (De lo contrario, también se tendría que utilizar Access para formato digital).
 
