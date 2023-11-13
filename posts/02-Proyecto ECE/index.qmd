@@ -30,6 +30,8 @@ ruta_digitacion <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
 
 # Contexto
 
+18:16
+
 Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura. **Sus consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera**.
 
 En términos prácticos, el instrumento propone dos temas para escribir un ensayo. Se espera que los estudiantes escojan uno y que redacten sus planteamiento con formalidad adecuada, basándose en el uso de recursos argumentativos.
