@@ -22,8 +22,8 @@ editor: visual
 #| warning: false
 
 library(usethis)
-usethis::use_git() #start the version control of your project (the function will          ask you if you want to commit your changes and restart RStudio, you can accept it):
-usethis::use_github()
+# usethis::use_git() #start the version control of your project (the function will          ask you if you want to commit your changes and restart RStudio, you can accept it):
+# usethis::use_github()
 
 ruta_digitacion <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
 ```

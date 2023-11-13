@@ -37,6 +37,6 @@ editor: visual
 
 
 execute:
-  freeze: true  # se vuelve a renderizar en caso que se encuentre alguna diferencia en el documento
+  freeze: auto  # se vuelve a renderizar en caso que se encuentre alguna diferencia en el documento
 
 
