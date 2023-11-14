@@ -15,12 +15,19 @@ format:
       citations-hover: false
 editor: visual
 ---
+
 <!-- usethis::use_git_config( -->
+
 <!--   # your name -->
+
 <!--   user.name = "ppozom", -->
+
 <!--   # your email used in your GitHub account -->
+
 <!--   user.email = "pablopozom@gmail.com" -->
+
 <!-- ) -->
+
 ```{r}
 #| label: ruta de digitación
 #| echo: false
@@ -38,12 +45,11 @@ usethis::use_git_config(
 )
 
 
+ruta_asignacion_0 <- "/4_datos/00_fuentes/0_estudiantes_previa/estructura/"
 ruta_digitacion <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
 ```
 
 # Contexto
-
-actualizacion 18:16
 
 Es un instrumento que se aplica a estudiantes de la Pontificia Universidad Católica con el objeto de medir competencias de lecto-escritura. **Sus consecuencias son de alto impacto, pues los estudiantes requieren su aprobación para optar a la titulación de su carrera**.
 
@@ -69,29 +75,59 @@ El material aplicado es recibido en MIDE. y debe pasar por dos procesos:
 
 ## BBDD Asignación folios
 
-En esta etapa se deben asociar todos los folios utilizados en la aplicación con slos estudiantes.\
-Para ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante. 
+### Contexto 
+En esta etapa se genera la asociación de cada folio utilizado con los estudiantes que lo utilizaron.\
+Para ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante.
 
 Actualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.
+::: {.callout-note title="Recordatorio"}
+Recordar que por defecto, se enviaron cuadernillos foliados sin ser preasignados a los estudiantes, es por esta razón que se debe realizar esta actividad,
+:::
+
+
+### Preparación de datos
+
+Para esto, es necesario de forma previa, cargar en la tabla **t_estudiantes_0** una selección de variables de la base de **datos asignación de salas**. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales deben completarse en este proceso.
+
+
+::: {.callout-important title="Importante"}
+Actualmente, la fuente para generar esta tabla es enviada por Andrea Vidal.
+Actualmente, esta tabla es trabajada en un excel de modo de adaptarla a la estructura de t_estudiantes_0
+Actualmente, esta tabla se deja en la ruta: `r ruta_asignacion_0`
+
+La tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.
+
+**t_estudiante_0** contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. **t_estudiante** contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.
+:::
+
+
+### Operación
 
 ::: {.callout-tip title="Flujo de trabajo"}
 -   Se filtra access según el nombre de la sala (disponible en el sobre)
 
--   Se pistolea el folio utilizado por el estudiante (**En caso que el estudiante se encuentre ausente, se reporta la letra "A" de ausente**)
+-   Se pistolea el folio utilizado por el estudiante\
+**En caso que el estudiante se encuentre ausente, se reporta la letra "A" de ausente**
 
--   Se escribe el tema escogido por el estudiante: se admiten valores 1 y 2. **En caso que un estudiante no registró tema, debe asignarse el valor 1**
+-   Se escribe el tema escogido por el estudiante: valores 1 o 2.
 
-    En caso que no se haya marcado un tema, debe deducirse teniendo a la vista que:
+
+    En caso que no se haya marcado un tema, debe deducirse teniendo a la vista que los temas son:
 
     -   1 regulación deportistas trans
-    -   2 regulación de himno nacional
+    -   2 regulación de himno nacional\
+    
+**En caso que un estudiante no registre el tema, se le debe asignar el valor 1**    
 
 -   Se cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio
 :::
 
+
+
+<!--# mermaid no debe tener espacios -->
+
 ```{mermaid}
 #| label: flujograma
-
 flowchart LR
   A[Filtrar sala] --> B(selecciona estudiante)
   B --> c[Registra folio]
@@ -100,15 +136,60 @@ flowchart LR
 
 ## BBDD Mecanizado
 
+### Contexto 
+
 Cada prueba sea corregida por dos correctores.
 
 Para lograr este objetivo, una vez recibidos todos los registros en la base de asignación de folios, los ensayos se envían a imprenta para ser fotocopiados. La idea es entregar una copia de cada ensayo a dos correctores distintos, uno conserva el original, otro conserva la copia.
 
-Una vez recibido el material de vuelta de imprenta, el material es organizado separandolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\
+Una vez recibido el material de vuelta de imprenta, el material es organizado separándolo en sobres, de tal modo que el trabajo de cada corrector sea comparado en forma proporcional por el resto de los correctores.\
 
 Luego de ello, el material es inventariado en la **Base de mecanizado**, la cual sirve para conocer el material que debe revisar cada corrector.
 
 Esta información constituye el marco de referencia para la digitación de los ensayos (al momento de realizar la digitación, se valida que el id del corrector real coincida con el id del corrector esperado)
+
+### Preparación de datos
+
+Para poder realizar el mecanizado en access, actualmente se requiere actualizar dos tablas:\
+**t_sobres** y **t_mecanizado_0**
+
+
+1- Una vez que ya se confirman los folios sobres que se utilizarán, estos se cargan en la tabla t_sobres.\
+**Cada sobre sólo figura en una oportunidad**
+
+::: {.callout-tip title="Actualización de información del cuadro combinado"}
+Esta información sirve para filtrar mediante el cuadro combinado del formulario
+:::
+
+2- Luego, en un archivo excel, generé a mano 35 folios sobres para cada asociación de mecanizador-dia y los pegué en la tabla t_mecanizado_0.
+La idea es dejar la tabla vacía, con información solamente en la variable mec_0_folio_sobre, lo que sirve para actualizar el subformulario. 
+   
+::: {.callout-tip title="Actualización de información del subformulario"}
+Esta información permite filtrar el cuadro combinado y exhibir resultados asociados en el subformulario.\
+¿Por qué 35 folio? porque actualmente corresponde a la máxima cantidad corregida por corrector en una jornada.
+:::
+
+3- Una vez hecho lo anterior, el formulario ya está habilitado para registrar información. \
+
+4- La base de mecanizado se actualizará en la tabla **t_mecanizado_0**.\ 
+### Operación
+
+::: {.callout-tip title="Flujo de trabajo"}
+- Se elige el sobre de corrector en el cuadro combinado. 
+- Se desplegarán 35 registros por cada sobre.
+- Se agrega el folio de documento para todos los documentos físicos existentes.
+  - folio no presente inconvenientes se marcará en  [Verde]{style="color:green;"}
+  - folio no presente inconvenientes se marcará en  [Rojo]{style="color:red;"}
+- Una vez finalizado el sobre, en caso que aún haya filas sin folio asignado, verifique que la cuenta de documentos coincida con los folios asignados. De lo contrario revise los folios aún no asignados.
+:::
+
+
+::: {.callout-tip title="Información de folio"}
+El folio sobre contiene información relevante:
+- Sus primeros tres digitos corresponden al encargado de corrección
+- Los últimos 3 dígitos corresponden al día programado de corrección  (no necesariamente coincidirá con la corrección real)
+::: 
+
 
 # Digitación
 
@@ -117,7 +198,7 @@ Esta información constituye el marco de referencia para la digitación de los e
 A cada digitador se le entregará un conjunto de registros corregidos durante el día al interior de un contenedor.\
 Al interior del contenedor, los documentos serán agrupados por corrector (puede ser al interior de un sobre o separados con un clip)
 
-1.  La digitación se realizará hasta las 11:00 am del día siguiente a su recepción en el siguiente directorio:
+1.  La digitación se realizará hasta las 12:30 pm del día siguiente a su recepción en el siguiente directorio:
 
 ::: border
 ```         
@@ -127,38 +208,18 @@ Al interior del contenedor, los documentos serán agrupados por corrector (puede
 
 [![Abrir achivo con ctrl + shift.](imagenes/gif_dig.gif){fig-align="center"}](S:/OPERACIONES/2023/2_ece/t2/01_prueba/)
 
-2.  Abrir Formulario Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre.
+2.  Abrir Formulario y digitar los registros del paquete.
 
-3.  Estos registros deben ser digitados durante el día en el siguiente directorio:
+3.  Luego de digitar los registros de un determinado corrector, la información debe ser nuevamente agrupada con el clip o al interior de su sobre y depositarlo en contenedor .
+
+4.  Por último, los registros físicos deben ser devueltos al contenedor correspondiente a la asignación corrector-día de corrección, disponible en el pasillo central de la planta libre.
+
 
 # Datos
 
-Para esto, es necesario de forma previa, cargar en la tabla **t_estudiantes_0** una selección de variables de la base de **datos asignación de salas**. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales son completados en este proceso.
 
-El objetivo es generar un formulario en donde mediante el uso de una lista desplegable, se permita la selección de una determinada sala y, como consecuencia de lo anterior, se consiga filtrar exclusivamente a los estudiantes asociados a dicha sala.
+Diariamente, en la medida que se vaya completando información en **t_estudiantes_0** y **t_mecanizado_0** , debe ser copiada y pegada en la **t_estudiantes** y **t_mecanizado** respectivamente. De sete modo será posible la digitación de estos casos añadidos.
 
-::: {.callout-important title="Importante"}
-La tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.
 
-**t_estudiante_0** contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. **t_estudiante** contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.
-:::
 
-<!--#  -->
 
-Esto queda cargado en una tabla\\\_ t_estudiantes_0, que es donde se va cargando de forma sincrónica la información a través de un formulario (formulario_principal). <!--#  -->
-
-<!--#  -->
-
-est_folio : vacío est_folio_def: vacío (no se usa) est_rut: rut de estudiante est_dv: dígito verificador de estudiante est_rut_comp: rut completo <!--#  -->
-
-<!--#  -->
-
-est_nombre_completo: nombre completo del estudiante est_id_sala : identficador de la sala donde se aplica (en la aplicación 23 es igual al nombre de la <!--#  -->sala) est_sala : nombre de la sala donde se aplica (en la aplicación 23 no hay id_sala) est_campus: campus al que corresponde la sala de aplicación <!--#  -->
-
-<!--#   -->
-
-est_tema: vacio (tema escogido para el ensayo que est_fuente: vacío (nombre de colaborador mide que asigna folio y tema a estudiante) est_fecha: vacío <!--#  -->
-
-<!--#   -->
-
-(fecha en que se realiza la asocianombre de colaborador mide que asigna folio y tema a estudiante) <!--#  -->
