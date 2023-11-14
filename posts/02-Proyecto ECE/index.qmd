@@ -15,7 +15,12 @@ format:
       citations-hover: false
 editor: visual
 ---
-
+<!-- usethis::use_git_config( -->
+<!--   # your name -->
+<!--   user.name = "ppozom", -->
+<!--   # your email used in your GitHub account -->
+<!--   user.email = "pablopozom@gmail.com" -->
+<!-- ) -->
 ```{r}
 #| label: ruta de digitación
 #| echo: false
@@ -24,6 +29,14 @@ editor: visual
 library(usethis)
 # usethis::use_git() #start the version control of your project (the function will          ask you if you want to commit your changes and restart RStudio, you can accept it):
 # usethis::use_github()
+
+usethis::use_git_config(
+  # your name
+  user.name = "ppozom",
+  # your email used in your GitHub account
+  user.email = "pablopozom@gmail.com"
+)
+
 
 ruta_digitacion <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
 ```
