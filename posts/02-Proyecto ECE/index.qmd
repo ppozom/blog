@@ -75,31 +75,30 @@ El material aplicado es recibido en MIDE. y debe pasar por dos procesos:
 
 ## BBDD Asignación folios
 
-### Contexto 
+### Contexto
+
 En esta etapa se genera la asociación de cada folio utilizado con los estudiantes que lo utilizaron.\
 Para ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante.
 
-Actualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante.
-::: {.callout-note title="Recordatorio"}
-Recordar que por defecto, se enviaron cuadernillos foliados sin ser preasignados a los estudiantes, es por esta razón que se debe realizar esta actividad,
-:::
-
+Actualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante. ::: {.callout-note title="Recordatorio"} Recordar que por defecto, se enviaron cuadernillos foliados sin ser preasignados a los estudiantes, es por esta razón que se debe realizar esta actividad, :::
 
 ### Preparación de datos
 
 Para esto, es necesario de forma previa, cargar en la tabla **t_estudiantes_0** una selección de variables de la base de **datos asignación de salas**. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales deben completarse en este proceso.
 
-
 ::: {.callout-important title="Importante"}
-Actualmente, la fuente para generar esta tabla es enviada por Andrea Vidal.
-Actualmente, esta tabla es trabajada en un excel de modo de adaptarla a la estructura de t_estudiantes_0
-Actualmente, esta tabla se deja en la ruta: `r ruta_asignacion_0`
+Actualmente, la fuente para generar esta tabla es enviada por Andrea Vidal.\
+
+Esta tabla es trabajada en un excel de modo de adaptarla a la estructura de t_estudiantes_0\
+
+Debe guardarse en la ruta: `r ruta_asignacion_0`
 
 La tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.
 
-**t_estudiante_0** contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. **t_estudiante** contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.
-:::
+**t_estudiante_0** contiene los estudiantes y las salas en las que rinden el instrumento.\\
 
+Consituye un insumo para t_estudiantes. **t_estudiante** contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.
+:::
 
 ### Operación
 
@@ -107,22 +106,19 @@ La tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.
 -   Se filtra access según el nombre de la sala (disponible en el sobre)
 
 -   Se pistolea el folio utilizado por el estudiante\
-**En caso que el estudiante se encuentre ausente, se reporta la letra "A" de ausente**
+    **En caso que el estudiante se encuentre ausente, se reporta la letra "A" de ausente**
 
 -   Se escribe el tema escogido por el estudiante: valores 1 o 2.
-
 
     En caso que no se haya marcado un tema, debe deducirse teniendo a la vista que los temas son:
 
     -   1 regulación deportistas trans
     -   2 regulación de himno nacional\
-    
-**En caso que un estudiante no registre el tema, se le debe asignar el valor 1**    
+
+**En caso que un estudiante no registre el tema, se le debe asignar el valor 1**
 
 -   Se cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio
 :::
-
-
 
 <!--# mermaid no debe tener espacios -->
 
@@ -136,7 +132,7 @@ flowchart LR
 
 ## BBDD Mecanizado
 
-### Contexto 
+### Contexto
 
 Cada prueba sea corregida por dos correctores.
 
@@ -153,7 +149,6 @@ Esta información constituye el marco de referencia para la digitación de los e
 Para poder realizar el mecanizado en access, actualmente se requiere actualizar dos tablas:\
 **t_sobres** y **t_mecanizado_0**
 
-
 1- Una vez que ya se confirman los folios sobres que se utilizarán, estos se cargan en la tabla t_sobres.\
 **Cada sobre sólo figura en una oportunidad**
 
@@ -161,35 +156,29 @@ Para poder realizar el mecanizado en access, actualmente se requiere actualizar 
 Esta información sirve para filtrar mediante el cuadro combinado del formulario
 :::
 
-2- Luego, en un archivo excel, generé a mano 35 folios sobres para cada asociación de mecanizador-dia y los pegué en la tabla t_mecanizado_0.
-La idea es dejar la tabla vacía, con información solamente en la variable mec_0_folio_sobre, lo que sirve para actualizar el subformulario. 
-   
+2- Luego, en un archivo excel, generé a mano 35 folios sobres para cada asociación de mecanizador-dia y los pegué en la tabla t_mecanizado_0. La idea es dejar la tabla vacía, con información solamente en la variable mec_0_folio_sobre, lo que sirve para actualizar el subformulario.
+
 ::: {.callout-tip title="Actualización de información del subformulario"}
 Esta información permite filtrar el cuadro combinado y exhibir resultados asociados en el subformulario.\
 ¿Por qué 35 folio? porque actualmente corresponde a la máxima cantidad corregida por corrector en una jornada.
 :::
 
-3- Una vez hecho lo anterior, el formulario ya está habilitado para registrar información. \
+3- Una vez hecho lo anterior, el formulario ya está habilitado para registrar información.\
 
-4- La base de mecanizado se actualizará en la tabla **t_mecanizado_0**.\ 
-### Operación
+4- La base de mecanizado se actualizará en la tabla **t_mecanizado_0**.  \### Operación
 
 ::: {.callout-tip title="Flujo de trabajo"}
-- Se elige el sobre de corrector en el cuadro combinado. 
-- Se desplegarán 35 registros por cada sobre.
-- Se agrega el folio de documento para todos los documentos físicos existentes.
-  - folio no presente inconvenientes se marcará en  [Verde]{style="color:green;"}
-  - folio no presente inconvenientes se marcará en  [Rojo]{style="color:red;"}
-- Una vez finalizado el sobre, en caso que aún haya filas sin folio asignado, verifique que la cuenta de documentos coincida con los folios asignados. De lo contrario revise los folios aún no asignados.
+-   Se elige el sobre de corrector en el cuadro combinado.
+-   Se desplegarán 35 registros por cada sobre.
+-   Se agrega el folio de documento para todos los documentos físicos existentes.
+    -   folio no presente inconvenientes se marcará en [Verde]{style="color:green;"}
+    -   folio no presente inconvenientes se marcará en [Rojo]{style="color:red;"}
+-   Una vez finalizado el sobre, en caso que aún haya filas sin folio asignado, verifique que la cuenta de documentos coincida con los folios asignados. De lo contrario revise los folios aún no asignados.
 :::
 
-
 ::: {.callout-tip title="Información de folio"}
-El folio sobre contiene información relevante:
-- Sus primeros tres digitos corresponden al encargado de corrección
-- Los últimos 3 dígitos corresponden al día programado de corrección  (no necesariamente coincidirá con la corrección real)
-::: 
-
+El folio sobre contiene información relevante: - Sus primeros tres digitos corresponden al encargado de corrección - Los últimos 3 dígitos corresponden al día programado de corrección (no necesariamente coincidirá con la corrección real)
+:::
 
 # Digitación
 
@@ -214,12 +203,6 @@ Al interior del contenedor, los documentos serán agrupados por corrector (puede
 
 4.  Por último, los registros físicos deben ser devueltos al contenedor correspondiente a la asignación corrector-día de corrección, disponible en el pasillo central de la planta libre.
 
-
 # Datos
 
-
 Diariamente, en la medida que se vaya completando información en **t_estudiantes_0** y **t_mecanizado_0** , debe ser copiada y pegada en la **t_estudiantes** y **t_mecanizado** respectivamente. De sete modo será posible la digitación de estos casos añadidos.
-
-
-
-
