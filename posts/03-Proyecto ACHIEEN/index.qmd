@@ -64,7 +64,6 @@ Considerando un margen para doble digitación, **se espera que el equipo digite 
 
 ::: {.callout-important title="Importante"}
 por problemas logísticos, en esta oportunidad, la parte 2 sólo contiene 58 preguntas.\
-
 :::
 
 # Aplicación
