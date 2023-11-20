@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Operaciones MIDE",
     "section": "",
-    "text": "Proyecto SEPA \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nPP\n\n\n\n\n\n\n  \n\n\n\n\nProyecto ECE \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2023\n\n\nPP\n\n\n\n\n\n\nNo matching items"
+    "text": "Proyecto ACHIEEN \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 19, 2023\n\n\nPP\n\n\n\n\n\n\n  \n\n\n\n\nProyecto SEPA \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nPP\n\n\n\n\n\n\n  \n\n\n\n\nProyecto ECE \n\n\n\n\n\n\n\ntutorial\n\n\n\n\n\n\n\n\n\n\n\nNov 6, 2023\n\n\nPP\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -137,7 +137,7 @@
     "href": "posts/02-Proyecto ECE/index.html#bbdd-asignación-folios",
     "title": "Proyecto ECE ",
     "section": "BBDD Asignación folios",
-    "text": "BBDD Asignación folios\n\nContexto\nEn esta etapa se genera la asociación de cada folio utilizado con los estudiantes que lo utilizaron.\nPara ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante.\nActualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante. ::: {.callout-note title=“Recordatorio”} Recordar que por defecto, se enviaron cuadernillos foliados sin ser preasignados a los estudiantes, es por esta razón que se debe realizar esta actividad, :::\n\n\nPreparación de datos\nPara esto, es necesario de forma previa, cargar en la tabla t_estudiantes_0 una selección de variables de la base de datos asignación de salas. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales deben completarse en este proceso.\n\n\n\n\n\n\nImportante\n\n\n\nActualmente, la fuente para generar esta tabla es enviada por Andrea Vidal. Actualmente, esta tabla es trabajada en un excel de modo de adaptarla a la estructura de t_estudiantes_0 Actualmente, esta tabla se deja en la ruta: /4_datos/00_fuentes/0_estudiantes_previa/estructura/\nLa tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.\nt_estudiante_0 contiene los estudiantes y las salas en las que rinden el instrumento. Consituye un insumo para t_estudiantes. t_estudiante contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.\n\n\n\n\nOperación\n\n\n\n\n\n\nFlujo de trabajo\n\n\n\n\nSe filtra access según el nombre de la sala (disponible en el sobre)\nSe pistolea el folio utilizado por el estudiante\nEn caso que el estudiante se encuentre ausente, se reporta la letra “A” de ausente\nSe escribe el tema escogido por el estudiante: se admiten valores 1 y 2.\nEn caso que no se haya marcado un tema, debe deducirse teniendo a la vista que:\n\n1 regulación deportistas trans\n2 regulación de himno nacional\n\n\n\nEn caso que un estudiante no registre el tema, se le debe asignar el valor 1\n\nSe cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio\n\n\n\n\n\n\n\n\n#| label: flujograma\nflowchart LR\n  A[Filtrar sala] --&gt; B(selecciona estudiante)\n  B --&gt; c[Registra folio]\n  B --&gt; d[Registra tema]"
+    "text": "BBDD Asignación folios\n\nContexto\nEn esta etapa se genera la asociación de cada folio utilizado con los estudiantes que lo utilizaron.\nPara ello, se registra en una base de datos cada uno de los folios utilizados y el tema de ensayo escogido por cada estudiante.\nActualmente se utiliza un archivo access en la que varias personas al mismo tiempo van anotando el folio y el tema escogido por cada estudiante. ::: {.callout-note title=“Recordatorio”} Recordar que por defecto, se enviaron cuadernillos foliados sin ser preasignados a los estudiantes, es por esta razón que se debe realizar esta actividad, :::\n\n\nPreparación de datos\nPara esto, es necesario de forma previa, cargar en la tabla t_estudiantes_0 una selección de variables de la base de datos asignación de salas. Esta base contiene la información de los estudiantes, pero no el folio ni el tema, los cuales deben completarse en este proceso.\n\n\n\n\n\n\nImportante\n\n\n\nActualmente, la fuente para generar esta tabla es enviada por Andrea Vidal.\n\nEsta tabla es trabajada en un excel de modo de adaptarla a la estructura de t_estudiantes_0\n\nDebe guardarse en la ruta: /4_datos/00_fuentes/0_estudiantes_previa/estructura/\nLa tabla debe ser cargada en t_estudiantes_0 y no en t_estudiantes.\nt_estudiante_0 contiene los estudiantes y las salas en las que rinden el instrumento.\\\nConsituye un insumo para t_estudiantes. t_estudiante contiene los estudiantes, las salas y además los folios y temas que fueronasignados en t_estudiante_0. Esta base es la que se usa para poblar la base de digitación.\n\n\n\n\nOperación\n\n\n\n\n\n\nFlujo de trabajo\n\n\n\n\nSe filtra access según el nombre de la sala (disponible en el sobre)\nSe pistolea el folio utilizado por el estudiante\nEn caso que el estudiante se encuentre ausente, se reporta la letra “A” de ausente\nSe escribe el tema escogido por el estudiante: valores 1 o 2.\nEn caso que no se haya marcado un tema, debe deducirse teniendo a la vista que los temas son:\n\n1 regulación deportistas trans\n2 regulación de himno nacional\n\n\n\nEn caso que un estudiante no registre el tema, se le debe asignar el valor 1\n\nSe cuenta la cantidad de formularios utilizados y se verifica que dicha cantidad coincida con la de registros completos en el campo folio\n\n\n\n\n\n\n\n\n#| label: flujograma\nflowchart LR\n  A[Filtrar sala] --&gt; B(selecciona estudiante)\n  B --&gt; c[Registra folio]\n  B --&gt; d[Registra tema]"
   },
   {
     "objectID": "posts/02-Proyecto ECE/index.html#bbdd-mecanizado",
@@ -173,5 +173,33 @@
     "title": "Proyecto SEPA ",
     "section": "Instrucciones generales",
     "text": "Instrucciones generales\n\nInsumos Digitación:\n\nContenedor Azul: conjunto de sobres con hojas de respuesta (HR) para digitar\nContenedor Verde: deposito de sobres ya digitados\nLector de código de barras\nBBDD access\nNómina de estudiantes\n\n\n\nCódigos Digitación\n\n\n\nClave\nCorrespondencia\n\n\n\n\n1\nAlternativa A\n\n\n2\nAlternativa B\n\n\n3\nAlternativa C\n\n\n4\nAlternativa D\n\n\n98\nNula (doble selección)\n\n\n99\nOmitida (sin elección)\n\n\n97\nNo aplica"
+  },
+  {
+    "objectID": "posts/03-Proyecto ACHIEEN/index.html",
+    "href": "posts/03-Proyecto ACHIEEN/index.html",
+    "title": "Proyecto ACHIEEN ",
+    "section": "",
+    "text": "El Examen Nacional de Enfermería es una prueba escrita, a la que cada Escuela de Enfermería asociada a ACHIEEN se somete voluntariamente con el propósito de evaluar los conocimientos de los futuros profesionales de enfermería.\n\nEsta evaluación se crea con el propósito de cautelar la calidad en la formación de los egresados de Enfermería de nuestro país y se orienta en medir conocimientos y su aplicación en situaciones clínicas.\nConsiste en un examen dividido en dos partes. Cada una de estas partes contiene 60 ítemes\n\n\n\n\n\n\nNota\n\n\n\nEn el año 2023 se inscribieron X estudiantes, de los cuales se espera que participen Y estudiantes.\n\n\n\n\n\n\n\n\nImportante\n\n\n\npor problemas logísticos, en esta oportunidad, la parte 2 sólo contiene 58 preguntas. Se espera que cada día el equipo digite desde 700 registros en total"
+  },
+  {
+    "objectID": "posts/03-Proyecto ACHIEEN/index.html#registro",
+    "href": "posts/03-Proyecto ACHIEEN/index.html#registro",
+    "title": "Proyecto ACHIEEN ",
+    "section": "Registro",
+    "text": "Registro\n\nCada miembro del equipo genera una copia del archivo excel recepcion_achieen.\nEste documento se encuentra en /4_datos/00_fuentes/0_estudiantes_previa/estructura/ completar los siguientes campos: folio_contenedor; folio_documento y fecha_registro\nUna vez finalizado el registro de todos los documentos, guarde el archivo con sus iniciales y con la fecha de hoy en formato aammdd (es decir, dos caracteres para año, mes y día).\n\npor ejemplo, si ud tiene el honor de llamarse Pablo Pozo e ingresó la info el 15 de noviembre del 23, nómbrelo recepcion_achieen_pp_231115\n\nConsideraciones del registro En primer lugar, se tomará la caja uno y se registrará íntegramente su material. Una vez foliados, los documentos deben ser devueltos a su respectivo sobre. Una vez completados los sobres, estos deben ser devueltos a la caja de origen.\nEn segundo lugar, se debe inventariar la caja 2.\n\n\n\n\nconfuso?"
+  },
+  {
+    "objectID": "posts/03-Proyecto ACHIEEN/index.html#digitación",
+    "href": "posts/03-Proyecto ACHIEEN/index.html#digitación",
+    "title": "Proyecto ACHIEEN ",
+    "section": "Digitación",
+    "text": "Digitación\nSegún sea solicitado, debe realizarse la digitación de la caja 1 o 2.\n\n\n\n\n\n\nImportante\n\n\n\nEl primer día se iniciará con la caja 1, serán avisados cuando puedan digitarse los sobres en el formulario 2\n\n\n\nSe extraen sobres de la caja y se distribuyen equitativamente entre los miembros de equipo. Se digitan en archivo access disponible en: S:/OPERACIONES/2023/2_ece/t2/01_prueba/\nSe escoge formulario_1 para documentos de la caja uno (o bien se escoge el formulario_2 para elementos de la caja dos).\nSe digita como si no existiera un mañana ::: {.callout-important title=“Importante”} es muy importante que se lleve a cabo la digitación en el formulario correspondiente.\nDe lo contrario, los resultados saldrán alterados :::"
+  },
+  {
+    "objectID": "posts/03-Proyecto ACHIEEN/index.html#códigos-digitación",
+    "href": "posts/03-Proyecto ACHIEEN/index.html#códigos-digitación",
+    "title": "Proyecto ACHIEEN ",
+    "section": "Códigos Digitación",
+    "text": "Códigos Digitación\n\n\n\nClave\nCorrespondencia\n\n\n\n\n1\nAlternativa A\n\n\n2\nAlternativa B\n\n\n3\nAlternativa C\n\n\n4\nAlternativa D\n\n\n8\nNula (doble selección)\n\n\n9\nOmitida (sin elección)\n\n\n7\nNo aplica\n\n\n\nAhora ya están listos. Digiten por la gloria de nuestra nación.\n\n\n\ndigitadores"
   }
 ]
