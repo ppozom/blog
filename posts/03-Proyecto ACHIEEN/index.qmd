@@ -45,8 +45,8 @@ usethis::use_git_config(
 )
 
 
-ruta_recepcion_achieen <- "/4_datos/00_fuentes/0_estudiantes_previa/estructura/"
-ruta_digitacion_achieen <- "S:/OPERACIONES/2023/2_ece/t2/01_prueba/"
+ruta_recepcion_achieen <- "S:/OPERACIONES/2023/5_achien/0_recepcion/"
+ruta_digitacion_achieen <- "S:/OPERACIONES/2023/5_achien/1_digitacion/"
 ```
 
 # Contexto
@@ -58,12 +58,13 @@ Esta evaluación se crea con el propósito de cautelar la calidad en la formaci�
 Consiste en un examen dividido en dos partes. Cada una de estas partes contiene 60 ítemes
 
 ::: {.callout-note title="Nota"}
-En el año 2023 se inscribieron **X** estudiantes, de los cuales se espera que participen **Y** estudiantes.
+En el año 2023 se inscribieron **3303** estudiantes, cada uno de los cuales contesta dos formularios.  \
+Considerando un margen para doble digitación, **se espera que el equipo digite 8200 registros en total**. /
 :::
 
 ::: {.callout-important title="Importante"}
 por problemas logísticos, en esta oportunidad, la parte 2 sólo contiene 58 preguntas.\
-**Se espera que cada día el equipo digite desde 700 registros en total**
+
 :::
 
 # Aplicación
